@@ -43,7 +43,7 @@
             <label for=" text">Enter the quote</label>
             <textarea class="form-control" rows="4" [(ngModel)]="quoteText"  name="text" id="text" #text="ngModel"
                 placeholder="Enter the quote" required minlength="6" maxlength="120"></textarea>
-                <!-- field validation -->
+                
                 <div *ngIf="text.errors && (text.dirty || text.touched)"class="alert alert-dark">
                     <div [hidden]="!text.errors['required']">
                         Quote required!
