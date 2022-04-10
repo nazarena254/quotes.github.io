@@ -6,6 +6,7 @@
             <input type="text" required minlength="4" maxlength="12" class="form-control"  placeholder="Enter your name"
               [(ngModel)]="quotePublisher" id="writtenBy"
                 name="user" #writtenBy="ngModel">
+                <!-- field validation -->
                 <div [hidden] *ngIf="writtenBy.errors && (writtenBy.dirty || writtenBy.touched)"class="alert alert-dark">
                     <div [hidden]="!writtenBy.errors['required']">
                         Your name required!
