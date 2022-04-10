@@ -25,6 +25,7 @@
             <label for="author">Name of author</label>
             <input type="text" class="form-control" placeholder="Enter author name" [(ngModel)]="quoteAuthor"
                 name="user" id="author" #author="ngModel" required minlength="4" maxlength="12">
+                 <!-- field validation -->
                 <div *ngIf="author.errors && (author.dirty || author.touched)"class="alert alert-dark">
                     <div [hidden]="!author.errors['required']">
                         Author name required!
