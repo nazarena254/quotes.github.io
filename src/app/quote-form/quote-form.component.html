@@ -61,7 +61,7 @@
             <label for="dateposted">Posted on</label>
             <input type="date" class="form-control" id="date" [(ngModel)]="quoteDate" #date="ngModel"
              name="datePosted" id="datePosted" #datePosted="ngModel" required>
-             <!-- field validation -->
+            
             <div *ngIf="datePosted.errors && (datePosted.dirty || datePosted.touched)"class="alert alert-dark">
                 <div [hidden]="!datePosted.errors['required']">
                     Select the date today!
