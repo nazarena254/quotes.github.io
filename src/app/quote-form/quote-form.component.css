@@ -1,0 +1,30 @@
+ .form-body{
+  align-items: center;
+
+ }
+  form {
+    align-items: center;
+    padding: 15px 50px;
+    border-radius: 1.5%;
+    background-color: rgb(141, 140, 140);
+    opacity:1.3;  
+    color:black;
+    font-weight: bold; 
+    width: 90%;  
+   
+  }
+  .listed{
+    background-color: #ffff;
+    opacity: 0.5;
+  }
+  h2{
+    color:white;
+  }
+  h3{
+    color:red
+  }
+  
+  label{
+    font-weight: 50;
+    font-size: 18px;
+  }

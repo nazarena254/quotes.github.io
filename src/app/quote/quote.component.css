@@ -1,0 +1,23 @@
+
+.first{
+   width:70% ;
+ 
+}
+.card-listed{
+   width: 32%;
+   background-color: rgb(253, 252, 251);
+   margin-bottom: 20px;
+   border-radius: 3px;
+   padding: 3.5px 0px;
+   margin-right: 15px;
+}
+.yes{  
+    display: flex;
+}
+p{
+    font-weight: bold;
+}
+h3{
+    color:rgb(245, 239, 239);
+    font-size: 42px;
+}

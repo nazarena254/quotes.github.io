@@ -1,0 +1,31 @@
+ 
+<div class="container ">
+    
+    <div class="first">
+     <app-quote-form (emitQuotes)="addNewQuotes($event)"></app-quote-form>
+    </div>
+
+    <h4 text-align="center" text="white">Below are the quotes :</h4>
+    <div class="row yes">
+        <div *ngFor="let quote of quotes; let i='index'" class=" card-listed  ">
+            <br><br>
+            <a name="quotes"></a>
+            <ul>
+                <li>
+                    <p>Quote:  "<b>{{quote.text}} </b> ."<br>Author: {{quote.author}}.
+                        Posted by: {{quote.writtenBy}}<br>Posted on: {{quote.datePosted|date|uppercase}} </p>
+                    <button (click)="upvote(i)" class="btn btn-secondary ">
+                        <i class="up"></i>{{quote.upvotes}} Upvote
+                    </button>&nbsp;&nbsp;&nbsp;
+                    <button (click)="downvote(i)" class="btn btn-secondary">
+                        <i class="down"></i>{{quote.downvotes}} Downvote                       
+                    </button>&nbsp;&nbsp;&nbsp;
+
+                    <app-quote-detail [quote]='quote' (isComplete)='deleteQuotes($event,i)'></app-quote-detail>
+                </li>
+
+            </ul>
+        </div>
+    </div>    
+</div>
+

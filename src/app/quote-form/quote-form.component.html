@@ -1,0 +1,74 @@
+<div class="container-fluid form-body" >
+    <a name="form"></a>
+    <form  (ngSubmit)='submitQuotes()' #quoteForm='ngForm'>
+        <div class="form-group">
+            <label for="writtenBy">Your name</label>
+            <input type="text" required minlength="4" maxlength="12" class="form-control"  placeholder="Enter your name"
+              [(ngModel)]="quotePublisher" id="writtenBy"
+                name="user" #writtenBy="ngModel">
+                <div [hidden] *ngIf="writtenBy.errors && (writtenBy.dirty || writtenBy.touched)"class="alert alert-dark">
+                    <div [hidden]="!writtenBy.errors['required']">
+                        Your name required!
+                    </div>
+                    <div [hidden]="!writtenBy.errors['minlength']">
+                        Your name must be at least 4 characters long.
+                    </div> 
+                    <div [hidden]="!writtenBy.errors['maxlength']">
+                        Name cannot be more than 12 characters long.
+                    </div>                 
+               </div> 
+        </div>
+        <br>
+
+        <div class="form-group">
+            <label for="author">Name of author</label>
+            <input type="text" class="form-control" placeholder="Enter author name" [(ngModel)]="quoteAuthor"
+                name="user" id="author" #author="ngModel" required minlength="4" maxlength="12">
+                <div *ngIf="author.errors && (author.dirty || author.touched)"class="alert alert-dark">
+                    <div [hidden]="!author.errors['required']">
+                        Author name required!
+                    </div>
+                    <div [hidden]="!author.errors['minlength']">
+                        Author name must be at least 4 characters long.
+                    </div> 
+                    <div [hidden]="!author.errors['maxlength']">
+                        author name cannot be more than 24 characters long.
+                    </div>                 
+               </div>
+        </div>
+
+        <div class="form-group">
+            <label for=" text">Enter the quote</label>
+            <textarea class="form-control" rows="4" [(ngModel)]="quoteText"  name="text" id="text" #text="ngModel"
+                placeholder="Enter the quote" required minlength="6" maxlength="120"></textarea>
+                <div *ngIf="text.errors && (text.dirty || text.touched)"class="alert alert-dark">
+                    <div [hidden]="!text.errors['required']">
+                        Quote required!
+                    </div>
+                    <div [hidden]="!text.errors['minlength']">
+                        Quote must be at least 6 characters long.
+                    </div> 
+                    <div [hidden]="!text.errors['maxlength']">
+                        Name cannot be more than 120 characters long.
+                    </div>                 
+               </div>    
+        </div>
+
+        <div class="form-group"> 
+            <label for="dateposted">Posted on</label>
+            <input type="date" class="form-control" id="date" [(ngModel)]="quoteDate" #date="ngModel"
+             name="datePosted" id="datePosted" #datePosted="ngModel" required>
+            <div *ngIf="datePosted.errors && (datePosted.dirty || datePosted.touched)"class="alert alert-dark">
+                <div [hidden]="!datePosted.errors['required']">
+                    Select the date today!
+                </div>                 
+            </div> 
+        </div>
+        <br>
+        <button type="submit" id="add" class="btn btn-secondary" >Post</button>
+        <!-- <button type="submit" id="add" class="btn btn-secondary" [disabled]="!form.valid">Post</button> -->
+    </form>
+</div>
+
+<br>
+<br>
